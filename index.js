@@ -138,6 +138,7 @@ function displayTop3PopularMovies(movies) {
 
   for (let i = 0; i < movies.length; i++) {
     const moviePosterPath = movies[i].poster_path;
+    const movieId = movies.id;
  
 
     const carouselItem = document.createElement('div');
@@ -150,6 +151,11 @@ function displayTop3PopularMovies(movies) {
     img.classList.add('d-block', 'w-100');
     img.src = `https://image.tmdb.org/t/p/w500${moviePosterPath}`;
     img.alt = `Popular Movie ${i + 1}`;
+ 
+      img.addEventListener('click' ,()=>{
+  handleCarouselItemClick(movieId);
+})
+
 
     carouselItem.appendChild(img);
     carouselInner.appendChild(carouselItem);
@@ -160,4 +166,8 @@ function displayTop3PopularMovies(movies) {
     interval: 1000 // 3 seconds interval for automatic sliding
   });
 }
-
+// Function to handle carousel item click
+function handleCarouselItemClick(movieId) {
+  // Redirect to the details page with the movie ID as a query parameter
+  window.location.href = `details.html?movie_id=${movieId}`;
+}
