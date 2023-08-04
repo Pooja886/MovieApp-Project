@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const movieId = urlParams.get('movie_id');
+
+
+     // Select the search input and search button elements
+     const searchInput = document.getElementById('searchInput');
+     const searchButton = document.getElementById('searchButton');
+     
+   
+     // Add event listener for the search button click
+     searchButton.addEventListener('click', () => {
+       const searchTerm = searchInput.value.trim(); // Get the search term entered by the user
+   
+       if (searchTerm !== '') {
+         // If the search term is not empty, redirect the user to the search results page
+         window.location.href = `searchresult.html?query=${encodeURIComponent(searchTerm)}`;
+       }
+     });
   
     displayDetails(movieId);
     // Fetch the movie details, including the cast information
@@ -49,21 +65,46 @@ document.addEventListener('DOMContentLoaded', () => {
   function displayMovieDetails(movie, container) {
     // Create the HTML elements for displaying movie details
     document.getElementById('header').innerHTML =  "Movie Details of "+ "" + "--" + "  " + movie.title;
-  
-    
+ 
     const movieDetails = document.createElement('div');
-    movieDetails.innerHTML = `
+    movieDetails.classList.add("imageContainer");
+
+    // Create and append the cast member's profile image (poster)
+    const posterImage = document.createElement('img');
+
+    posterImage.classList.add('Image-poster');
+    posterImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    posterImage.alt = `${movie.title}`;
+    movieDetails.appendChild(posterImage);
     
-      <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} max-height="200px" width="200px">
-      <p>${movie.overview}</p>
-      <p>Release Date: ${movie.release_date}</p>
-      <p>Rating: ${movie.vote_average}/10</p>
-      <p>Runtime: ${movie.runtime} minutes</p>
-      <!-- Add more information here if needed -->
-    `;
-  
-    container.appendChild(movieDetails);
-  }
+     const movieMetaData = document.createElement('div');
+     movieMetaData.classList.add("meta-details");
+
+     const overView = document.createElement('p');
+     overView.classList.add("overview-details");
+     overView.style.color = "black"
+     overView.textContent = "OverView :" + " "  + movie.overview;
+
+     const releaseDate = document.createElement("p");
+     releaseDate.style.color = "black"
+     releaseDate.classList.add("releale-details");
+     releaseDate.textContent = "Realease Date : " + movie.release_date;
+
+
+     const vote = document.createElement("p");
+     vote.style.color = "black"
+     vote.classList.add("vote-details");
+     vote.textContent =  "Rating:" + movie.vote_average;
+   
+
+
+      container.appendChild(movieDetails);
+      container.appendChild(movieMetaData);
+      movieMetaData.appendChild(releaseDate);
+      movieMetaData.appendChild(vote);
+      movieMetaData.appendChild(overView);
+
+   }
   
   // display cast 
   function displayCast(cast) {
@@ -80,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   function createCastCard(castMember) {
-    // Create an HTML element (e.g., card) to show the cast member's name and profile image
+
     const castCard = document.createElement('div');
     castCard.classList.add('cast-card');
 
@@ -96,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
      // Create and append the cast member's name
      const nameElement = document.createElement('p');
-     nameElement.style.color = "white"
+     nameElement.classList.add("nameDetails");
      nameElement.textContent = castMember.name;
      castCard.appendChild(nameElement);
 

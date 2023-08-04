@@ -109,7 +109,7 @@ function createMovieCard(movie)
    cardBody.classList.add("card-body"); 
    
    const title = document.createElement("h5"); 
-   title.style.color = "white"
+   title.style.color = "blacl"
    title.classList.add("card-title"); 
    title.textContent = movie.title; 
    cardBody.appendChild(title); 
@@ -121,7 +121,7 @@ function createMovieCard(movie)
    cardBody.appendChild(rating);
 
    const releaseDate = document.createElement("p");
-   releaseDate.style.color = "white"
+   releaseDate.style.color = "black"
    releaseDate.classList.add("card-text");
    releaseDate.textContent = movie.release_date;
    cardBody.appendChild(releaseDate);
@@ -135,10 +135,11 @@ function displayTop3PopularMovies(movies) {
   const topPopularMovieCarousel = document.getElementById('topPopularMovieCarousel');
   const carouselInner = topPopularMovieCarousel.querySelector('.carousel-inner');
 
-
+ 
+    
   for (let i = 0; i < movies.length; i++) {
     const moviePosterPath = movies[i].poster_path;
-    const movieId = movies.id;
+     const movieId = movies[i].id;
  
 
     const carouselItem = document.createElement('div');
@@ -152,9 +153,10 @@ function displayTop3PopularMovies(movies) {
     img.src = `https://image.tmdb.org/t/p/w500${moviePosterPath}`;
     img.alt = `Popular Movie ${i + 1}`;
  
-      img.addEventListener('click' ,()=>{
-  handleCarouselItemClick(movieId);
-})
+    img.addEventListener('click' ,()=>{
+    handleCarouselItemClick(movieId);
+    })
+  
 
 
     carouselItem.appendChild(img);

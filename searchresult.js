@@ -13,7 +13,7 @@ let isLoading = false;
 
     function fetchSearchResults(page) {
       console.log(searchTerm)
-      document.getElementById('searchheader').innerHTML = "Search Result For " + " " + searchTerm;
+      document.getElementById('searchheader').innerHTML = "Search Result For " + " [" + searchTerm + "]";
       if (isLoading) return;
       isLoading = true;
       const searchApiUrl = `${base_url}/search/movie?${access_key}&query=${encodeURIComponent(searchTerm)}&page=${page}`;
