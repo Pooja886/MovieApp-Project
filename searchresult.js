@@ -30,7 +30,9 @@ let isLoading = false;
             }else{
               totalPages = 1;
             }
+
             data.results.forEach(movie => {
+         
               const movieCard = createDifferentMovieCard(movie);
               searchResultContainer.appendChild(movieCard);
               movieCard.addEventListener('click', () => {
@@ -38,7 +40,7 @@ let isLoading = false;
                 window.location.href = `details.html?movie_id=${movieId}`;
               });
             });
-            currentPage++;
+           currentPage++;
           }else{
             if(page===1){
               searchResultContainer.innerHTML=`<p>NO movies found.</p>`
@@ -65,7 +67,7 @@ let isLoading = false;
     window.addEventListener('scroll', () => {
       const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
       const bottomReached = scrollTop + clientHeight >= scrollHeight - 200;
-      if (bottomReached && currentPage <= totalPages) {
+      if (bottomReached && currentPage <= totalPages) {  
         fetchSearchResults(currentPage);
       }
     });
