@@ -1,4 +1,4 @@
--9-*-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   let searchTerm = urlParams.get('query');
 // Select the search input and search button elements
