@@ -1,10 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+-9-*-document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   let searchTerm = urlParams.get('query');
 // Select the search input and search button elements
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 let currentPage = 1;
+let totalPages = 0;
 let isLoading = false;
 
 
@@ -23,6 +24,12 @@ let isLoading = false;
         .then(data => {
           isLoading = false;
           if (data.results.length > 0) {
+
+            if(data.total_pages >1){
+            totalPages = data.total_pages;
+            }else{
+              totalPages = 1;
+            }
             data.results.forEach(movie => {
               const movieCard = createDifferentMovieCard(movie);
               searchResultContainer.appendChild(movieCard);
@@ -58,7 +65,7 @@ let isLoading = false;
     window.addEventListener('scroll', () => {
       const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
       const bottomReached = scrollTop + clientHeight >= scrollHeight - 200;
-      if (bottomReached) {
+      if (bottomReached && currentPage <= totalPages) {
         fetchSearchResults(currentPage);
       }
     });
