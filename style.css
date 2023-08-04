@@ -1,0 +1,333 @@
+.image-slider{
+    width: 60vw;
+    margin-left: 20%;
+}
+/* NAVBAR STYLING */
+nav{
+  background-color: black;
+  height: 4rem;
+}
+body{
+  background-color: orangered;
+  margin: 0;
+}
+
+.navbar-brand{
+  font-weight: bold;
+  margin-left: 5rem;
+  color: azure;
+  font-weight: bold; 
+  cursor: pointer;
+}
+#navbarContainer{
+  display: flex;
+}
+
+.sliderCon{
+  height: 550px;
+  background-color: orangered;
+    
+    
+  }
+  .popularSection{
+    background-color: orangered;
+    height: 550px;
+  }
+/* NAVBAR AND SLIDER ENDS */
+
+
+.container h2{
+margin-left: 40%;
+ 
+  margin-bottom: 2rem;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-top: 1rem;
+  width: 26%;
+  border: 2px solid black;
+  box-shadow: 2px 3px 4px 2px black;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+
+  font-weight: bold;
+}
+
+
+.card {
+  max-height: 400px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  overflow: hidden;
+  outline: 5px solid black;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+ 
+}
+
+.card-body {
+  padding: 15px;
+  background-color: white;
+  color: black;
+}
+
+.card-title  {
+  
+  font-size: .8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  
+}
+
+.card-text {
+  font-size: 14px;
+  color: black;
+  line-height: 1px;
+ 
+}
+.card-rate{
+  color: orangered;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-text::before {
+  content: '\2022'; 
+  margin-right: 5px;
+}
+
+.card-text:last-child::before {
+  content: none; 
+}
+
+.container {
+  margin-top: 30px;
+}
+
+
+
+
+/* For searchresult.html */
+#searchResultContainer{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(30rem, 1fr));
+  gap: 1rem;
+  margin-left: 15rem;
+}
+.searchheader{
+  color: white;
+  text-align: center;
+}
+.movie-card{
+  margin-top: 2rem;
+  border:.6rem solid black;
+  max-width: 20rem;
+  outline: 2px solid black;
+  background-color: white;
+  box-shadow: 0rem 0rem 2rem white;
+}
+.movie-card img{
+  height: 300px;
+  min-width: 300px;
+  object-fit: cover;
+  outline: 1px solid black;
+
+}
+.movie-rating{
+  color: black;
+  margin-top: .6rem;
+  text-align: center;
+}
+.movie-release-date{
+  color: black;
+  text-align: center;
+}
+/* SEARCH RESULT STYING END HERE */
+
+
+.cast-poster{
+  border-radius: 50%;
+  width: 100px;height: 100px;
+  margin-left: 3rem;
+  margin-top: 1rem;
+  outline: 5px solid black;
+
+}
+.cast-card{
+  border: 2px solid black;
+  width: 10%;
+  outline: 3px solid black;
+
+}
+.cast-container{
+display: flex;
+gap: 1rem;
+}
+.nameDetails{
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+.carousel-item img{
+  
+  max-height: 50rem;
+
+  background:black;
+  margin-bottom: 1rem;
+  
+
+}
+.main-slider{
+  background-image: linear-gradient(180deg , orangered, black);
+}
+
+#topPopularMovieCarousel{
+  width: 50%;
+  margin-left: 25%;
+
+}
+
+/* details page */
+
+#movieDetailsContainer{
+   margin-top: 4rem;
+   color: black;
+   margin-left: 600px;
+   display: flex;
+   flex-wrap: wrap;
+   border: 2px solid black;
+   width: 45%;
+   border-radius: 1rem;
+  
+}
+.Image-poster{
+  height: 360px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.meta-details{
+  width: 60%;
+  padding-left: 50px;
+  padding-top: 60px;
+  font-size: 20px;
+ 
+}
+.releale-details{
+  font-weight: bold;
+}
+.vote-details{
+  font-weight: bold;
+}
+.trailer-container{
+  height: 100px;
+  width: 600px;
+margin-top: 2rem;
+margin-left: 38%;
+  
+}
+.detail{
+  margin-left: 38%;
+  color: orangered;
+}
+.cast-container{
+  margin-top: 100px;
+  margin-left: 100px;
+}
+.header{
+  color: black;
+  margin-left: 40%;
+  border: 2px solid rgb(36, 36, 122) ;
+  width: 30%;
+  padding-left: 1rem;
+
+}
+.heading{
+  color: black;
+  margin-left: 45%;
+  margin-top: 4rem;
+  width: 20%;
+  padding-left: 1rem;
+}
+.ending{
+  color: black;
+  margin-top: 350px;
+  margin-left: 46%;
+  width: 15%;
+  padding-left: 1rem;
+}
+#searchheader{
+  text-align: center;
+}
+#fixedFooter{
+ 
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+}
+#header{
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.search-container{
+  text-align: center;
+  margin-top: 1rem;
+  background-color: black;
+  height: 4rem;
+  padding-top: 1rem;
+}
+#searchInput{
+  width: 50%;
+  height: 2.5rem;
+  border-radius: 1rem;
+}
+#searchButton{
+  background-color: orangered;
+width: 6rem;
+  height: 2.5rem;
+ border-radius: 1rem;
+ }
+ .indexFooter{
+  background-color: black;
+  /* position: fixed;
+  bottom:0%; */
+  width: 100%;
+ }
+ #footerContainer{
+  background-color: black;
+  position: fixed;
+  bottom:0%; 
+  width: 100%; 
+ }
+ .footerDetailPage{
+  width: 100%;
+  height: 5rem;
+  background-color: black;
+  margin-top: 7rem;
+ 
+ }
+ #copy{
+  margin-left: 50%;
+margin-top: 1rem;
+  font-weight: bold;
+  padding-top: 1.5rem;
+
+ }
+ #deatilNav{
+  display: flex;
+  justify-content: space-between;
+ margin-top: 1rem;
+ }
+ #ulItems{
+  display: flex;
+  justify-content: space-between;
+  
+ }
+ 
